@@ -1,0 +1,1079 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("Sales Analysis by Ship To / Part")
+gui.SS_Form1..size(6180,6750)
+gui.SS_Form1..minx(0)
+gui.SS_Form1..miny(0)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,ss_form1_unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_dtp1_Begdate.create(label,"Beginning Invoice Date",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_dtp1_Begdate.defaultvalue("")
+gui.SS_Form1.lbl_dtp1_Begdate.controlgroup(0)
+gui.SS_Form1.dtp1_Begdate.create(datepicker)
+gui.SS_Form1.dtp1_Begdate.visible(True)
+gui.SS_Form1.dtp1_Begdate.size(1800,345)
+gui.SS_Form1.dtp1_Begdate.zorder(0)
+gui.SS_Form1.dtp1_Begdate.position(100,335)
+gui.SS_Form1.dtp1_Begdate.enabled(True)
+gui.SS_Form1.dtp1_Begdate.checkbox(False)
+gui.SS_Form1.dtp1_Begdate.SetInternationalID(779801)
+gui.SS_Form1.dtp1_Begdate.defaultvalue("")
+gui.SS_Form1.dtp1_Begdate.controlgroup(0)
+gui.SS_Form1.lbl_dtp1_Enddate.create(label,"Ending Invoice Date",True,1800,200,1,1985,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_dtp1_Enddate.defaultvalue("")
+gui.SS_Form1.lbl_dtp1_Enddate.controlgroup(0)
+gui.SS_Form1.dtp1_Enddate.create(datepicker)
+gui.SS_Form1.dtp1_Enddate.visible(True)
+gui.SS_Form1.dtp1_Enddate.size(1800,345)
+gui.SS_Form1.dtp1_Enddate.zorder(0)
+gui.SS_Form1.dtp1_Enddate.position(1985,335)
+gui.SS_Form1.dtp1_Enddate.enabled(True)
+gui.SS_Form1.dtp1_Enddate.checkbox(False)
+gui.SS_Form1.dtp1_Enddate.SetInternationalID(779901)
+gui.SS_Form1.dtp1_Enddate.defaultvalue("")
+gui.SS_Form1.dtp1_Enddate.controlgroup(0)
+gui.SS_Form1.chk1_Alldates.create(checkbox)
+gui.SS_Form1.chk1_Alldates.caption("All Dates")
+gui.SS_Form1.chk1_Alldates.visible(True)
+gui.SS_Form1.chk1_Alldates.size(1800,300)
+gui.SS_Form1.chk1_Alldates.zorder(0)
+gui.SS_Form1.chk1_Alldates.position(100,685)
+gui.SS_Form1.chk1_Alldates.enabled(True)
+gui.SS_Form1.chk1_Alldates.alignment(0)
+gui.SS_Form1.chk1_Alldates.fontname("Arial")
+gui.SS_Form1.chk1_Alldates.fontsize(8)
+gui.SS_Form1.chk1_Alldates.event(click,chk1_alldates_click)
+gui.SS_Form1.chk1_Alldates.SetInternationalID(19700)
+gui.SS_Form1.chk1_Alldates.defaultvalue("")
+gui.SS_Form1.chk1_Alldates.controlgroup(0)
+gui.SS_Form1.lbl_txt1_BegShipTo.create(label,"Beginning Ship To State",True,1800,200,1,100,1235,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txt1_BegShipTo.SetInternationalID(63502)
+gui.SS_Form1.lbl_txt1_BegShipTo.defaultvalue("")
+gui.SS_Form1.lbl_txt1_BegShipTo.controlgroup(0)
+gui.SS_Form1.txt1_BegShipTo.create(textbox,"",True,1800,330,0,100,1435,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txt1_BegShipTo.defaultvalue("")
+gui.SS_Form1.txt1_BegShipTo.controlgroup(0)
+gui.SS_Form1.cmd_txt1_BegRep.create(button)
+gui.SS_Form1.cmd_txt1_BegRep.caption("^")
+gui.SS_Form1.cmd_txt1_BegRep.visible(True)
+gui.SS_Form1.cmd_txt1_BegRep.size(330,330)
+gui.SS_Form1.cmd_txt1_BegRep.zorder(0)
+gui.SS_Form1.cmd_txt1_BegRep.position(1985,1435)
+gui.SS_Form1.cmd_txt1_BegRep.enabled(True)
+gui.SS_Form1.cmd_txt1_BegRep.fontname("Arial")
+gui.SS_Form1.cmd_txt1_BegRep.fontsize(8)
+gui.SS_Form1.cmd_txt1_BegRep.event(click,cmd_txt1_begrep_click)
+gui.SS_Form1.cmd_txt1_BegRep.defaultvalue("")
+gui.SS_Form1.cmd_txt1_BegRep.controlgroup(0)
+gui.SS_Form1.lbl_txt1_EndShipTo.create(label,"Ending Ship To State",True,1800,200,1,2455,1235,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txt1_EndShipTo.SetInternationalID(216001)
+gui.SS_Form1.lbl_txt1_EndShipTo.defaultvalue("")
+gui.SS_Form1.lbl_txt1_EndShipTo.controlgroup(0)
+gui.SS_Form1.txt1_EndShipTo.create(textbox,"",True,1800,330,0,2455,1435,True,0,Arial,8,16777215,1)
+gui.SS_Form1.txt1_EndShipTo.defaultvalue("")
+gui.SS_Form1.txt1_EndShipTo.controlgroup(0)
+gui.SS_Form1.cmd_txt1_EndRep.create(button)
+gui.SS_Form1.cmd_txt1_EndRep.caption("^")
+gui.SS_Form1.cmd_txt1_EndRep.visible(True)
+gui.SS_Form1.cmd_txt1_EndRep.size(330,330)
+gui.SS_Form1.cmd_txt1_EndRep.zorder(0)
+gui.SS_Form1.cmd_txt1_EndRep.position(4340,1435)
+gui.SS_Form1.cmd_txt1_EndRep.enabled(True)
+gui.SS_Form1.cmd_txt1_EndRep.fontname("Arial")
+gui.SS_Form1.cmd_txt1_EndRep.fontsize(8)
+gui.SS_Form1.cmd_txt1_EndRep.event(click,cmd_txt1_endrep_click)
+gui.SS_Form1.cmd_txt1_EndRep.defaultvalue("")
+gui.SS_Form1.cmd_txt1_EndRep.controlgroup(0)
+gui.SS_Form1.chk1_AllShipTo.create(checkbox)
+gui.SS_Form1.chk1_AllShipTo.caption("All Ship To")
+gui.SS_Form1.chk1_AllShipTo.visible(True)
+gui.SS_Form1.chk1_AllShipTo.size(1800,300)
+gui.SS_Form1.chk1_AllShipTo.zorder(0)
+gui.SS_Form1.chk1_AllShipTo.position(100,1770)
+gui.SS_Form1.chk1_AllShipTo.enabled(True)
+gui.SS_Form1.chk1_AllShipTo.alignment(0)
+gui.SS_Form1.chk1_AllShipTo.fontname("Arial")
+gui.SS_Form1.chk1_AllShipTo.fontsize(8)
+gui.SS_Form1.chk1_AllShipTo.event(click,chk1_allReptl_click)
+gui.SS_Form1.chk1_AllShipTo.SetInternationalID(22701)
+gui.SS_Form1.chk1_AllShipTo.defaultvalue("")
+gui.SS_Form1.chk1_AllShipTo.controlgroup(0)
+gui.SS_Form1.lvw1_Rep.create(listview)
+gui.SS_Form1.lvw1_Rep.view(3)
+gui.SS_Form1.lvw1_Rep.addlistviewcolumn("Starting Ship To",2705,0)
+gui.SS_Form1.lvw1_Rep.addlistviewcolumn("Ending Ship To",2705,0)
+gui.SS_Form1.lvw1_Rep.visible(True)
+gui.SS_Form1.lvw1_Rep.size(5495,2000)
+gui.SS_Form1.lvw1_Rep.zorder(0)
+gui.SS_Form1.lvw1_Rep.position(100,2320)
+gui.SS_Form1.lvw1_Rep.enabled(True)
+gui.SS_Form1.lvw1_Rep.fontname("Arial")
+gui.SS_Form1.lvw1_Rep.fontsize(8)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.create(button)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.caption("Add")
+gui.SS_Form1.cmd_lvw1_ShipToAdd.visible(True)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.size(1000,330)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.zorder(0)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.position(4810,1435)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.enabled(True)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.fontname("Arial")
+gui.SS_Form1.cmd_lvw1_ShipToAdd.fontsize(8)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.event(click,cmd_lvw1_repadd_click)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.SetInternationalID(7600)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.defaultvalue("")
+gui.SS_Form1.cmd_lvw1_ShipToAdd.controlgroup(0)
+gui.SS_Form1.cmd_lvw1_RepDelete.create(button)
+gui.SS_Form1.cmd_lvw1_RepDelete.caption("Delete")
+gui.SS_Form1.cmd_lvw1_RepDelete.visible(True)
+gui.SS_Form1.cmd_lvw1_RepDelete.size(1000,330)
+gui.SS_Form1.cmd_lvw1_RepDelete.zorder(0)
+gui.SS_Form1.cmd_lvw1_RepDelete.position(100,4405)
+gui.SS_Form1.cmd_lvw1_RepDelete.enabled(True)
+gui.SS_Form1.cmd_lvw1_RepDelete.fontname("Arial")
+gui.SS_Form1.cmd_lvw1_RepDelete.fontsize(8)
+gui.SS_Form1.cmd_lvw1_RepDelete.event(click,cmd_lvw1_repdelete_click)
+gui.SS_Form1.cmd_lvw1_RepDelete.SetInternationalID(171500)
+gui.SS_Form1.cmd_lvw1_RepDelete.defaultvalue("")
+gui.SS_Form1.cmd_lvw1_RepDelete.controlgroup(0)
+gui.SS_Form1.cmd_lvw1_RepClear.create(button)
+gui.SS_Form1.cmd_lvw1_RepClear.caption("Clear")
+gui.SS_Form1.cmd_lvw1_RepClear.visible(True)
+gui.SS_Form1.cmd_lvw1_RepClear.size(1000,330)
+gui.SS_Form1.cmd_lvw1_RepClear.zorder(0)
+gui.SS_Form1.cmd_lvw1_RepClear.position(1185,4405)
+gui.SS_Form1.cmd_lvw1_RepClear.enabled(True)
+gui.SS_Form1.cmd_lvw1_RepClear.fontname("Arial")
+gui.SS_Form1.cmd_lvw1_RepClear.fontsize(8)
+gui.SS_Form1.cmd_lvw1_RepClear.event(click,cmd_lvw1_repclear_click)
+gui.SS_Form1.cmd_lvw1_RepClear.SetInternationalID(106700)
+gui.SS_Form1.cmd_lvw1_RepClear.defaultvalue("")
+gui.SS_Form1.cmd_lvw1_RepClear.controlgroup(0)
+gui.SS_Form1.chk1_InclFreight.create(checkbox)
+gui.SS_Form1.chk1_InclFreight.caption("Include Freight Charges")
+gui.SS_Form1.chk1_InclFreight.visible(True)
+gui.SS_Form1.chk1_InclFreight.size(3600,300)
+gui.SS_Form1.chk1_InclFreight.zorder(0)
+gui.SS_Form1.chk1_InclFreight.position(100,4900)
+gui.SS_Form1.chk1_InclFreight.enabled(True)
+gui.SS_Form1.chk1_InclFreight.alignment(0)
+gui.SS_Form1.chk1_InclFreight.fontname("Arial")
+gui.SS_Form1.chk1_InclFreight.fontsize(8)
+gui.SS_Form1.chk1_InclFreight.SetInternationalID(291402)
+gui.SS_Form1.chk1_InclFreight.defaultvalue("")
+gui.SS_Form1.chk1_InclFreight.controlgroup(0)
+gui.SS_Form1.chk1_InclExclusions.create(checkbox)
+gui.SS_Form1.chk1_InclExclusions.caption("Use Exclusion Accounts to Exclude Records")
+gui.SS_Form1.chk1_InclExclusions.visible(True)
+gui.SS_Form1.chk1_InclExclusions.size(3600,300)
+gui.SS_Form1.chk1_InclExclusions.zorder(0)
+gui.SS_Form1.chk1_InclExclusions.position(100,5285)
+gui.SS_Form1.chk1_InclExclusions.enabled(True)
+gui.SS_Form1.chk1_InclExclusions.alignment(0)
+gui.SS_Form1.chk1_InclExclusions.fontname("Arial")
+gui.SS_Form1.chk1_InclExclusions.fontsize(8)
+gui.SS_Form1.chk1_InclExclusions.SetInternationalID(3305)
+gui.SS_Form1.chk1_InclExclusions.defaultvalue("")
+gui.SS_Form1.chk1_InclExclusions.controlgroup(0)
+gui.SS_Form1.cmd1_Print.create(button)
+gui.SS_Form1.cmd1_Print.caption("Export")
+gui.SS_Form1.cmd1_Print.visible(True)
+gui.SS_Form1.cmd1_Print.size(1000,360)
+gui.SS_Form1.cmd1_Print.zorder(0)
+gui.SS_Form1.cmd1_Print.position(100,5670)
+gui.SS_Form1.cmd1_Print.enabled(True)
+gui.SS_Form1.cmd1_Print.fontname("Arial")
+gui.SS_Form1.cmd1_Print.fontsize(8)
+gui.SS_Form1.cmd1_Print.event(click,cmd1_print_click)
+gui.SS_Form1.cmd1_Print.SetInternationalID(452800)
+gui.SS_Form1.cmd1_Print.defaultvalue("")
+gui.SS_Form1.cmd1_Print.controlgroup(0)
+gui.SS_Form1.dtp1_Begdate.tabstop(true)
+gui.SS_Form1.dtp1_Begdate.tabindex(1)
+gui.SS_Form1.dtp1_Enddate.tabstop(true)
+gui.SS_Form1.dtp1_Enddate.tabindex(2)
+gui.SS_Form1.chk1_Alldates.tabstop(true)
+gui.SS_Form1.chk1_Alldates.tabindex(3)
+gui.SS_Form1.txt1_BegShipTo.tabstop(true)
+gui.SS_Form1.txt1_BegShipTo.tabindex(4)
+gui.SS_Form1.cmd_txt1_BegRep.tabstop(true)
+gui.SS_Form1.cmd_txt1_BegRep.tabindex(5)
+gui.SS_Form1.txt1_EndShipTo.tabstop(true)
+gui.SS_Form1.txt1_EndShipTo.tabindex(6)
+gui.SS_Form1.cmd_txt1_EndRep.tabstop(true)
+gui.SS_Form1.cmd_txt1_EndRep.tabindex(7)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.tabstop(true)
+gui.SS_Form1.cmd_lvw1_ShipToAdd.tabindex(8)
+gui.SS_Form1.chk1_AllShipTo.tabstop(true)
+gui.SS_Form1.chk1_AllShipTo.tabindex(9)
+gui.SS_Form1.chk1_InclFreight.tabstop(true)
+gui.SS_Form1.chk1_InclFreight.tabindex(11)
+gui.SS_Form1.chk1_InclExclusions.tabstop(true)
+gui.SS_Form1.chk1_InclExclusions.tabindex(12)
+gui.SS_Form1.cmd1_Print.tabstop(true)
+gui.SS_Form1.cmd1_Print.tabindex(13)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uPart.Define("dDate_Invoice",Date,"INVC_DATE")
+Variable.UDT.uPart.Define("fCost",Float,"COST")
+Variable.UDT.uPart.Define("fQty_Shipped",Float,"QTY_SHIPPED")
+Variable.UDT.uPart.Define("sCustomer",String,"CUST")
+Variable.UDT.uPart.Define("sDescription",String,"DESCR")
+Variable.UDT.uPart.Define("sInvoice",String,"INVC_NO")
+Variable.UDT.uPart.Define("sPart",String,"PART")
+Variable.UDT.uPart.Define("sProduct_Line",String,"PROD_LINE")
+Variable.UDT.uPart.Define("fSales",Float,"SALES")
+Variable.UDT.uPart.Define("sLocation",String,"PART_LOCN")
+Variable.UDT.uPart.Define("iBIRunID",Long,"RUNID")
+Variable.UDT.uPart.Define("sBranch",String,"BRANCH")
+Variable.UDT.uPart.Define("sOrderNum",String,"ORDER_NUM")
+Variable.UDT.uPart.Define("sShipToID",String,"SHIPTO_ID")
+Variable.UDT.uPart.Define("sShipToName",String,"SHIP_NAME")
+Variable.UDT.uPart.Define("sRep",String,"SALESMAN_ID")
+Variable.UDT.uPart.Define("sRepName",String,"SALESMAN_NAME")
+Variable.UDT.uPart.Define("sOrderSeq",String,"ORDER_SEQ")
+Variable.UDT.uPart.Define("bExclude",Boolean,"EXCL_ACCT_FLAG")
+Variable.UDT.uPart.Define("bProgress",Boolean,"PROG_BILL_FLAG")
+Variable.UDT.uPart.Define("bFreight",Boolean,"FREIGHT_FLAG")
+Variable.UDT.uPart.Define("sSHIP_STATE",String,"SHIP_STATE")
+Variable.uGlobal.uPart.Declare("uPart")
+
+Variable.Global.bopt.Declare(Boolean,False)
+Variable.Global.CDec.Declare(String)
+Variable.Global.QDec.Declare(String)
+Variable.Global.iKey.Declare(Long,0)
+Variable.Global.iLogid.declare(Long,0)
+Variable.Global.iBIRunID.declare(Long,0)
+
+Variable.Global.sShipTo.Declare(String)
+Variable.UDT.uLocation.Define("LOCATION",String,LOCATION)
+Variable.uGlobal.uLocation.Declare("uLocation")
+Variable.UDT.uCustomer.Define("CUSTOMER",String,CUSTOMER)
+Variable.uGlobal.uCustomer.Declare("uCustomer")
+Variable.UDT.uShipTo.Define("SHIP_STATE",String,SHIP_STATE)
+Variable.uGlobal.uSHIPTO.Declare("uSHIPTO")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+ 'Coded by: Jackie Theriot
+'Project Start Date: 11/12/2013
+'Sales analysis by Cust and part number
+'Crystal report:  1305, SA_SalesRep_1305.rpt
+
+'Modified 07/1/16 by WAW
+'This is a custom .csv export for DLS
+
+
+'open connection
+F.ODBC.connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.puser,V.Ambient.PPass,100000)
+'gui.SS_Form1..applytranslation
+'Gui.ss_form1.chk1_InclProg.value("0")
+Gui.SS_Form1.chk1_InclExclusions.value("0")
+Gui.SS_Form1.chk1_InclFreight.value("0")
+Gui.SS_Form1..show
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.callsub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+program.sub.cmd1_print_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd1_print_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+'Print Button
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+
+V.Local.sRows.Declare(String)
+V.Local.sStartDate.Declare(String)
+V.Local.sEndDate.Declare(String)
+V.Local.sShipToRange.Declare(String)
+V.Local.sRangePad1.Declare(String)
+V.Local.sRangePad2.Declare(String)
+V.local.sShipToRangeFile.Declare(String)
+V.local.sShipToRangeFileString.Declare(String)
+V.local.sShipToRangeFileFQP.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iOrd.Declare(Long)
+V.Local.sDel.Declare(String)
+
+Gui.SS_Form1..Visible(False)
+
+V.uGlobal.uPart.Redim(-1,-1)
+
+'==============
+'These are the options that set how many decimals will be used for the Cost and Quantity fields
+F.global.general.readoption("400713",1,"0",0,V.Global.CDec)
+F.global.general.readoption("400714",1,"0",0,V.Global.QDec)
+'==============
+
+'==============
+'This is setting the RunId and identifying the report Id
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Intrinsic.Control.If(V.Ambient.IsInIDE,=,True)
+        F.Global.BI.StartLogging(V.global.iBIRunID,1308,0,"",V.global.iLogID)
+F.Intrinsic.Control.Else
+        F.Global.BI.StartLogging(V.global.iBIRunID,-1,-1,"",V.global.iLogID)
+F.Intrinsic.Control.EndIf
+'===============
+
+'===============
+''This is setting up the parameters for the CallWrapper
+Gui.SS_Form1.lvw1_Rep.RetrieveAllListItems(V.Local.sRows)
+	F.Intrinsic.Control.If(V.Local.sRows,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sRows.UBound,1)
+		Gui.SS_Form1.lvw1_Rep.RetrieveItemOrdinal(V.Local.sRows(v.Local.iC),V.Local.iOrd)
+		V.local.sShipToRange.Set(V.Screen.SS_Form1!lvw1_Rep.ListItemTextExtended(v.Local.iOrd))
+		F.Intrinsic.String.Split(V.local.sShipToRange,"*!*",V.local.sShipToRange)
+		V.Local.sRangePad1.Set(V.Local.sShipToRange(0))
+		V.Local.sRangePad2.Set(V.Local.sShipToRange(1))
+			F.Intrinsic.Control.If(V.local.sShipToRangeFileString.Trim,=,"")
+				F.Intrinsic.String.Build("{0}*!*{1}",V.Local.sRangePad1,V.Local.sRangePad2,V.local.sShipToRangeFileString)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}{1}{2}*!*{3}",V.local.sShipToRangeFileString,V.Ambient.NewLine,V.Local.sRangePad1,V.Local.sRangePad2,V.local.sShipToRangeFileString)
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	V.Global.sShipTo.Set(V.Local.sShipToRangeFileString)
+F.Intrinsic.Control.Else
+	'V.Local.sPartRangeFile.Set("*!*ZDR*!*")
+'	V.local.sShipToRangeFile.Set("")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Screen.SS_Form1!dtp1_BegDate.Value,"YYYYMMDD",V.Local.sStartDate)
+F.Intrinsic.String.Format(V.Screen.SS_Form1!dtp1_EndDate.Value,"YYYYMMDD",V.Local.sEndDate)
+'F.Intrinsic.String.Build("\{0\}!*!\{1\}!*!\{2\}!*!\{3\}!*!\{4\}!*!\{5\}!*!\{6\}!*!\{7\}!*!\{8\}!*!\{9\}!*!\{10\}!*!\{11\}!*!\{12\}!*!\{13\}!*!\{14\}!*!\{15\}!*!\{16\}",V.Global.iBIRunID,"1308",V.Screen.SS_Form1!chk1_Alldates.Value,V.Local.sStartDate,V.Local.sEndDate,"1","","1","","1","",V.Screen.SS_Form1!chk1_AllShipTo.Value,v.local.sShipToRangeFile,"1","","1","",V.Local.sParams)
+F.Intrinsic.String.Build("{0}!*!{1}!*!{2}!*!{3}!*!{4}!*!{5}!*!{6}!*!{7}!*!{8}!*!{9}!*!{10}!*!{11}!*!{12}!*!{13}!*!{14}!*!{15}!*!{16}",V.Global.iBIRunID,"1308",V.Screen.SS_Form1!chk1_Alldates.Value,V.Local.sStartDate,V.Local.sEndDate,"1","","1","","1","","1","","1","","1","",V.Local.sParams)
+
+F.Global.General.CallWrapperSync(8101,V.Local.sParams)
+
+'===============
+'ThisdeletesthecontentsoftheY_SA_IN_DETAILtablefortherunid
+F.Intrinsic.String.Build("Delete from Y_SA_IN_DETAIL where runid <> '{0}'",V.Global.iBIRunID,V.Local.sDel)
+F.ODBC.Connection!conx.Execute(V.Local.sDel)
+'===============
+
+'===============
+'This is calling the Crystal Report
+F.Global.BI.StopLogging(V.Global.iLogid)
+'F.Intrinsic.Control.CallSub(Callbi)
+
+F.Intrinsic.Control.CallSub(Exportdata)
+'===============
+'===============
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd1_print_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd1_print_click.end
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ==========================================================
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.iret.declare(Long)
+
+
+V.Local.sParams.set("Allrep*!*AllDates*!*BegDate*!*EndDate*!*PrtCDec*!*PrtDec*!*InclProg*!*InclFreight*!*InclExclusions")
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}*!*{5}*!*{6}*!*{7}*!*{8}",V.Screen.SS_Form1!chk1_AllShipTo.Value,V.Screen.SS_Form1!chk1_Alldates.Value,V.Screen.SS_Form1!dtp1_Begdate.Value,V.Screen.SS_Form1!dtp1_Enddate.Value,V.Global.CDec,V.Global.QDec,V.Screen.SS_Form1!chk1_InclProg.Value,V.Screen.SS_Form1!chk1_InclFreight.Value,V.Screen.SS_Form1!chk1_InclExclusions.Value,V.Local.sValues)
+
+F.Global.BI.runreportpreprocessor(V.Global.iBIRunID,V.Global.iLogid,V.Local.sParams,V.Local.sValues,"",-1,True,"",-1,"",-1,"","",V.Local.iret)
+
+
+'End ==========================================================
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CallBI.End
+
+program.sub.ss_form1_unload.start
+F.Intrinsic.Control.SetErrorHandler("ss_form1_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+'End ==========================================================
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ss_form1_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.ss_form1_unload.end
+
+program.sub.chk1_allReptl_click.start
+F.Intrinsic.Control.SetErrorHandler("chk1_allRep_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+
+'All
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk1_AllShipTo.Value,=,1)
+'disable entry of range
+	Gui.SS_Form1.txt1_BegShipTo.Enabled(false)
+	Gui.SS_Form1.txt1_EndShipTo.Enabled(false)
+	Gui.SS_Form1.cmd_txt1_BegRep.Enabled(false)
+	Gui.SS_Form1.cmd_txt1_EndRep.Enabled(false)
+	Gui.SS_Form1.cmd_lvw1_ShipToAdd.Enabled(false)
+	Gui.ss_form1.cmd_lvw1_Repclear.Enabled(false)
+	Gui.ss_form1.cmd_lvw1_Repdelete.Enabled(false)
+	Gui.SS_Form1.txt1_BegShipTo.Text("")
+	Gui.SS_Form1.txt1_EndShipTo.Text("")
+	Gui.SS_Form1.lvw1_Rep.ClearItems
+
+F.Intrinsic.control.Else
+
+'enable entry of range
+	Gui.SS_Form1.txt1_BegShipTo.Enabled(true)
+	Gui.SS_Form1.txt1_EndShipTo.Enabled(true)
+	Gui.SS_Form1.cmd_txt1_BegRep.Enabled(true)
+	Gui.SS_Form1.cmd_txt1_EndRep.Enabled(true)
+	Gui.SS_Form1.cmd_lvw1_ShipToAdd.Enabled(true)
+	Gui.ss_form1.cmd_lvw1_Repclear.Enabled(true)
+	Gui.ss_form1.cmd_lvw1_Repdelete.Enabled(true)
+	Gui.SS_Form1.lvw1_Rep.ClearItems
+F.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chk1_allRep_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chk1_allReptl_click.end
+
+program.sub.txt1_begRep_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txt1_begRep_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txt1_BegShipTo.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt1_begRep_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txt1_begRep_gotfocus.end
+
+program.sub.txt1_begRep_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txt1_begpart_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txt1_EndShipTo.Text(V.Screen.SS_Form1!txt1_BegShipTo.Text)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt1_begpart_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txt1_begRep_lostfocus.end
+
+program.sub.txt1_endRep_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txt1_endpart_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txt1_EndShipTo.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt1_endpart_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txt1_endRep_gotfocus.end
+
+program.sub.cmd_txt1_begRep_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt1_begpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ==========================================================
+'Beginning Browser
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.iwidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}","State","Customer","Customer Name",V.local.stitles)
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}","2000","2000","2000",V.Local.sWidths)
+Function.Intrinsic.String.Split(V.Local.sTitles,"*!*",Variable.local.sTitles)
+Function.Intrinsic.String.Split(V.local.swidths,"*!*",Variable.local.sWidths)
+
+Function.Intrinsic.UI.Browser("Select a Ship To State","conx","Select STATE_SHIP,CUSTOMER, NAME_CUSTOMER_SHIP From V_CUSTOMER_SHIPTO order by STATE_SHIP asc",Variable.Local.sTitles,Variable.Local.sWidths,Variable.Local.sRet)
+Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")
+ Function.Intrinsic.UI.Msgbox("No Ship To State was selected!")
+Function.Intrinsic.Control.Else
+ Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+	Gui.SS_Form1.txt1_BegShipTo.Text(V.Local.sRet(0).Trim)
+	Gui.SS_Form1.txt1_EndShipTo.Text(V.Screen.SS_Form1!txt1_BegShipTo.Text)
+' Function.Intrinsic.UI.Msgbox(Variable.Local.sTemp)
+Function.Intrinsic.Control.EndIf
+
+
+'
+'F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	Gui.SS_Form1.txt1_BegShipTo.Text(V.Local.sRet(3).Trim)
+'	Gui.SS_Form1.txt1_EndShipTo.Text(V.Screen.SS_Form1!txt1_BegShipTo.Text)
+'F.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt1_begpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_txt1_begRep_click.end
+
+program.sub.cmd_txt1_endRep_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt1_endpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ==========================================================
+'Ending Browser
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+'
+'F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	Gui.SS_Form1.txt1_EndShipTo.Text(V.Local.sRet(3).Trim)
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}","State","Customer","Customer Name",V.local.stitles)
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}","2000","2000","2000",V.Local.sWidths)
+Function.Intrinsic.String.Split(V.Local.sTitles,"*!*",Variable.local.sTitles)
+Function.Intrinsic.String.Split(V.local.swidths,"*!*",Variable.local.sWidths)
+
+Function.Intrinsic.UI.Browser("Select a Ship To State","conx","Select STATE_SHIP,CUSTOMER, NAME_CUSTOMER_SHIP From V_CUSTOMER_SHIPTO order by STATE_SHIP asc",Variable.Local.sTitles,Variable.Local.sWidths,Variable.Local.sRet)
+Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")
+ Function.Intrinsic.UI.Msgbox("No Ship To State was selected!")
+Function.Intrinsic.Control.Else
+ Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+	Gui.SS_Form1.txt1_EndShipTo.Text(V.Local.sRet.Trim)
+	' Function.Intrinsic.UI.Msgbox(Variable.Local.sTemp)
+Function.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt1_endpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_txt1_endRep_click.end
+
+program.sub.cmd_lvw1_Repadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_Repadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+'Listview Add button
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.control.If(V.screen.SS_Form1!txt1_BegShipTo.text,<," ")
+F.Intrinsic.control.andIf(V.screen.SS_Form1!txt1_EndShipTo.text,<," ")
+	F.intrinsic.control.exitsub
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Add(V.global.iKey,1,V.global.iKey)
+Gui.SS_Form1.lvw1_Rep.AddListItem(V.global.iKey,V.Screen.SS_Form1!txt1_BegShipTo.Text)
+Gui.SS_Form1.lvw1_Rep.SetListItemSubItemText(V.global.iKey,1,V.Screen.SS_Form1!txt1_EndShipTo.Text)
+Gui.SS_Form1.txt1_BegShipTo.Text("")
+Gui.SS_Form1.txt1_EndShipTo.Text("")
+	
+
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_Repadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_lvw1_Repadd_click.end
+
+program.sub.cmd_lvw1_Repdelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_Repdelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+'Listview delete button
+V.Local.iKey.Declare(Long)
+V.Local.iOrd.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.SS_Form1!lvw1_Rep.SelectedItemKey)
+Gui.SS_Form1.lvw1_Rep.removeitem(V.Local.iKey)
+
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_Repdelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_lvw1_Repdelete_click.end
+
+program.sub.cmd_lvw1_Repclear_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_Repclear_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+'Listview clear button
+Gui.SS_Form1.lvw1_Rep.ClearItems
+
+
+'End ==========================================================
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_Repclear_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_lvw1_Repclear_click.end
+
+program.sub.chk1_alldates_click.start
+F.Intrinsic.Control.SetErrorHandler("chk1_alldates_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ========================================================
+
+'All Dates
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk1_AllDates.Value,=,1)
+'disable entry of date range
+	Gui.SS_Form1.dtp1_BegDate.enabled(false)
+	Gui.SS_Form1.dtp1_EndDate.Enabled(false)
+	
+F.Intrinsic.control.Else
+
+'enable entry of date range
+	Gui.SS_Form1.dtp1_BegDate.Enabled(true)
+	Gui.SS_Form1.dtp1_EndDate.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+'End ==========================================================
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chk1_alldates_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chk1_alldates_click.end
+
+program.sub.chk1_inclprog_click.start
+
+
+program.sub.chk1_inclprog_click.end
+
+Program.Sub.ExportData.Start
+F.Intrinsic.Control.SetErrorHandler("ExportData_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sfile.Declare(String)
+V.Local.bexists.Declare(Boolean)
+V.Local.sfullpath.Declare(String)
+V.Local.sfilename.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.stitles.Declare(String)
+V.Local.sline.Declare(String)
+V.Local.sgrandline.Declare(String)
+V.Local.sdate.Declare(String)
+V.Local.ishipto.Declare(Long)
+V.Local.ssql.Declare(String)
+V.Local.srange.Declare(String)
+V.Local.iubound.Declare(Long)
+V.Local.ilbound.Declare(Long)
+V.Local.fpercent.Declare(Float)
+V.Local.fprofit.Declare(Float)
+V.Local.scustomer.Declare(String)
+V.Local.slocline.Declare(String)
+V.Local.idistinct.Declare(Long)
+V.Local.ssubtotals.Declare(String)
+V.Local.sgrandtotals.Declare(String)
+V.Local.iranges.Declare(Long)
+V.Local.scurrent.Declare(String)
+V.Local.ssql2.Declare(String)
+
+'set the variables for the grand amounts
+V.Local.fgrandsales.Declare(Float,0)
+V.Local.fgrandpercent.Declare(Float,0)
+V.Local.fgrandprofit.Declare(Float,0)
+V.Local.fgrandcost.Declare(Float,0)
+V.Local.fgrandshipqty.Declare(Float,0)
+
+'inform the user that the export is happening
+F.Intrinsic.UI.InvokeWaitDialog("Generating Export Files...")
+'build the filepath
+F.Intrinsic.String.build("{0}{1}",V.Caller.FilesDir,"\SAbyShipTo",V.Local.sfile)
+'see if the folder exists
+F.Intrinsic.File.Exists(V.Local.sfile,V.Local.bexists)
+'if the file doesn't exists create it
+F.Intrinsic.Control.If(V.Local.bexists,=,False)
+	F.Intrinsic.File.CreateDir(V.Local.sfile)
+F.Intrinsic.Control.EndIf
+'set the date and format it
+V.Local.sdate.Set(V.Ambient.Date)
+F.Intrinsic.String.Replace(V.Local.sdate,"/","",V.Local.sdate)
+'build the filename
+F.Intrinsic.String.Build("{0}_{1}_{2}{3}","SAbyShipTo",V.Local.sDate,V.Caller.Terminal,".csv",V.Local.sfilename)
+'build the full path
+F.Intrinsic.String.Build("{0}\{1}",V.local.sfile,V.Local.sfilename,V.Local.sfullpath)
+
+'loop through the ship to IDs created
+F.Intrinsic.control.if(V.Screen.SS_Form1!chk1_AllShipTo.Value,=,1)
+	'get the individual states
+	F.Intrinsic.String.Build("Select DISTINCT SHIP_STATE from Y_SA_IN_DETAIL where RUNID = '{0}'",V.Global.iBIRunID,V.Local.ssql)
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uglobal.uShipto",False,0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.close
+	'loop through the individual states
+	F.Intrinsic.Control.For(V.Local.idistinct,V.uGlobal.uSHIPTO.LBound,V.uGlobal.uSHIPTO.UBound,1)
+		'redim the uPart udt
+		V.uGlobal.uPart.Redim(-1,-1)
+		'get all the data for the particular ship to state
+		F.Intrinsic.String.Build("Select RUNID, Part, Part_Locn, Cust, Invc_no, Invc_Date, Descr, Prod_Line, Qty_Shipped, Cost, Sales, ShipTo_ID, Ship_Name, Salesman_ID, Salesman_Name, Order_Num, Branch, Order_Seq, Freight_flag, Prog_bill_flag, excl_acct_flag, SHIP_STATE from Y_SA_IN_DETAIL  where RUNID = '{0}' and SHIP_STATE = '{1}'",V.Global.iBIRunID,V.uglobal.uShipTo(v.local.idistinct)!SHIP_STATE,V.Local.ssql)
+		F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uglobal.uPart",True,1000)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.close
+		'loop through the UDT and build the string of data
+		F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uPart.LBound,V.uGlobal.uPart.UBound,1)
+			'if it is the first time around get the column titles
+			F.Intrinsic.Control.If(V.Local.i,=,0)
+				F.Intrinsic.Control.If(V.Local.sline.trim,<>,"")
+					F.Intrinsic.string.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.sline,V.ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				F.Intrinsic.Control.else
+					F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","Part Number","Location","Description","Invoice Date","Quantity Shipped","Sales","Cost","Gross Profit","Gross Profit Percent",V.local.stitles)
+					F.Intrinsic.String.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.stitles,V.ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				F.Intrinsic.Control.EndIf
+				'get the percent and profit
+				F.Intrinsic.String.Build("Select PERCENT, PROFIT from Y_SA_IN_DETAIL where RUNID = '{0}' and PART = '{1}' and PART_LOCN = '{2}' and DESCR = '{3}' and INVC_DATE = '{4}'",V.global.ibirunid,V.uGlobal.uPart(v.Local.i)!sPart.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!dDate_Invoice.PervasiveDate,V.local.ssql)
+		
+				F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.String.Build("{0},{1},{3}",V.Local.sline,V.ODBC.conx!rst.FieldValFloat!PERCENT,,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.sline)
+					'add to the grand percents and profits
+					F.Intrinsic.Math.Add(V.local.fgrandpercent,V.ODBC.conx!rst.FieldValFloat!PERCENT,V.Local.fgrandpercent)
+					F.Intrinsic.Math.Add(V.local.fgrandprofit,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.fgrandprofit)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.close
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.sline,V.Ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				'get the percent and profit
+				F.Intrinsic.String.Build("Select PERCENT, PROFIT from Y_SA_IN_DETAIL where RUNID = '{0}' and PART = '{1}' and PART_LOCN = '{2}' and DESCR = '{3}' and INVC_DATE = '{4}'",V.global.ibirunid,V.uGlobal.uPart(v.Local.i)!sPart.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!dDate_Invoice.PervasiveDate,V.local.ssql)
+				F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.String.Build("{0},{1},{3}",V.Local.sline,V.ODBC.conx!rst.FieldValFloat!PERCENT,,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.sline)
+					'add to the grand percents and profits
+					F.Intrinsic.Math.Add(V.local.fgrandpercent,V.ODBC.conx!rst.FieldValFloat!PERCENT,V.Local.fgrandpercent)
+					F.Intrinsic.Math.Add(V.local.fgrandprofit,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.fgrandprofit)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.close
+			F.Intrinsic.Control.EndIf
+			'add to the grand totals
+			F.Intrinsic.Math.Add(V.Local.fgrandcost,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.fgrandcost)
+			F.Intrinsic.Math.Add(V.Local.fgrandsales,V.uGlobal.uPart(v.Local.i)!fSales,V.Local.fgrandsales)
+			F.Intrinsic.Math.Add(V.Local.fgrandshipqty,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.Local.fgrandshipqty)
+		F.Intrinsic.Control.Next(V.Local.i)
+		'get the subtotals for that ship to state
+		F.Intrinsic.String.Build("Select SUM(PERCENT) as PERCENT, SUM(PROFIT) as PROFIT, SUM(SALES) as SALES, SUM(COST) as COST, SUM(QTY_SHIPPED) as QTY_SHIPPED from Y_SA_IN_DETAIL where RUNID = '{0}' and SHIP_STATE = '{1}'",V.Global.iBIRunID,V.uGlobal.uSHIPTO(v.Local.idistinct)!SHIP_STATE,V.Local.ssql)
+		F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			'put the subtotal for that state at the end of the string
+			F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","","","Subtotals for: ",V.uGlobal.uShipto(v.Local.iDistinct)!SHIP_STATE,V.ODBC.conx!rst.FieldValFloat!QTY_SHIPPED,V.ODBC.conx!rst.FieldValfloat!SALES,V.ODBC.conx!rst.FieldValfloat!COST,V.ODBC.conx!rst.FieldValfloat!PROFIT,V.ODBC.conx!rst.FieldValfloat!PERCENT,V.Local.ssubtotals)
+			F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sline,V.Ambient.NewLine,V.local.ssubtotals,V.Local.sline)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+		'clear out the subtotals
+		V.Local.ssubtotals.Set("")
+	F.Intrinsic.Control.Next(V.Local.idistinct)
+	'list the grand totals at the end
+	F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","","","Grandtotals: ","",V.local.fgrandshipqty,V.Local.fgrandsales,V.Local.fgrandcost,V.Local.fgrandprofit,V.local.fgrandpercent,V.Local.sgrandtotals)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sline,V.Ambient.NewLine,V.local.sgrandtotals,V.Local.sline)
+F.Intrinsic.Control.Else
+	'split the global variable that stores the ranges
+	F.Intrinsic.String.Split(V.Global.sshipto,V.Ambient.NewLine,V.Global.sShipTo)
+	'loop through the ranges
+	F.Intrinsic.Control.For(V.Local.iranges,V.Global.sShipTo.LBound,V.Global.sShipTo.UBound,1)
+		'first split the range by *!*
+		F.Intrinsic.String.Split(V.Global.sShipTo(v.Local.iranges),"*!*",V.local.scurrent)
+		'redim the uPart udt
+		V.uGlobal.uPart.Redim(-1,-1)
+		'get all the data for the particular ship to state
+		F.Intrinsic.String.Build("Select RUNID, Part, Part_Locn, Cust, Invc_no, Invc_Date, Descr, Prod_Line, Qty_Shipped, Cost, Sales, ShipTo_ID, Ship_Name, Salesman_ID, Salesman_Name, Order_Num, Branch, Order_Seq, Freight_flag, Prog_bill_flag, excl_acct_flag, SHIP_STATE from Y_SA_IN_DETAIL  where RUNID = '{0}' and SHIP_STATE between '{1}' and '{2}'",V.Global.iBIRunID,V.local.scurrent(0),V.local.scurrent(1),V.Local.ssql)
+		F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uglobal.uPart",True,1000)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.close
+		'loop through the UDT and build the string of data
+		F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uPart.LBound,V.uGlobal.uPart.UBound,1)
+			'if it is the first time around get the column titles
+			F.Intrinsic.Control.If(V.Local.i,=,0)
+				F.Intrinsic.Control.If(V.Local.sline,<>,"")
+					F.Intrinsic.string.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.sline,V.ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				F.Intrinsic.Control.else
+					F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","Part Number","Location","Description","Invoice Date","Quantity Shipped","Sales","Cost","Gross Profit","Gross Profit Percent",V.local.stitles)
+					F.Intrinsic.String.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.stitles,V.ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				F.Intrinsic.Control.EndIf
+				'get the percent and profit
+				F.Intrinsic.String.Build("Select PERCENT, PROFIT from Y_SA_IN_DETAIL where RUNID = '{0}' and PART = '{1}' and PART_LOCN = '{2}' and DESCR = '{3}' and INVC_DATE = '{4}'",V.global.ibirunid,V.uGlobal.uPart(v.Local.i)!sPart.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!dDate_Invoice.PervasiveDate,V.local.ssql)
+				F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.String.Build("{0},{1},{3}",V.Local.sline,V.ODBC.conx!rst.FieldValFloat!PERCENT,,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.sline)
+					'add to the grand percents and profits
+					F.Intrinsic.Math.Add(V.local.fgrandpercent,V.ODBC.conx!rst.FieldValFloat!PERCENT,V.Local.fgrandpercent)
+					F.Intrinsic.Math.Add(V.local.fgrandprofit,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.fgrandprofit)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.close
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}{1}{2},{3},{4},{5},{6},{7},{8}",V.local.sline,V.Ambient.newline,V.uGlobal.uPart(v.Local.i)!sPart,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription,V.uGlobal.uPart(v.Local.i)!dDate_Invoice,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.uGlobal.uPart(v.Local.i)!fSales,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.sline)
+				'get the percent and profit
+				F.Intrinsic.String.Build("Select PERCENT, PROFIT from Y_SA_IN_DETAIL where RUNID = '{0}' and PART = '{1}' and PART_LOCN = '{2}' and DESCR = '{3}' and INVC_DATE = '{4}'",V.global.ibirunid,V.uGlobal.uPart(v.Local.i)!sPart.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!sLocation,V.uGlobal.uPart(v.Local.i)!sDescription.PSQLFriendly,V.uGlobal.uPart(v.Local.i)!dDate_Invoice.PervasiveDate,V.local.ssql)
+				F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.String.Build("{0},{1},{3}",V.Local.sline,V.ODBC.conx!rst.FieldValFloat!PERCENT,,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.sline)
+					'add to the grand percents and profits
+					F.Intrinsic.Math.Add(V.local.fgrandpercent,V.ODBC.conx!rst.FieldValFloat!PERCENT,V.Local.fgrandpercent)
+					F.Intrinsic.Math.Add(V.local.fgrandprofit,V.ODBC.conx!rst.FieldValFloat!PROFIT,V.Local.fgrandprofit)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.close
+			F.Intrinsic.Control.EndIf
+			'add to the grand totals
+			F.Intrinsic.Math.Add(V.Local.fgrandcost,V.uGlobal.uPart(v.Local.i)!fCost,V.Local.fgrandcost)
+			F.Intrinsic.Math.Add(V.Local.fgrandsales,V.uGlobal.uPart(v.Local.i)!fSales,V.Local.fgrandsales)
+			F.Intrinsic.Math.Add(V.Local.fgrandshipqty,V.uGlobal.uPart(v.Local.i)!fQty_Shipped,V.Local.fgrandshipqty)
+		F.Intrinsic.Control.Next(V.Local.i)
+		'get the distinct states within that range
+		F.Intrinsic.String.Build("Select Distinct SHIP_STATE from Y_SA_IN_DETAIL where RUNID = '{0}' and SHIP_STATE between '{1}' and '{2}'",V.Global.iBIRunID,V.Local.scurrent(0),V.local.scurrent(1),V.local.ssql)
+		F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+			F.Intrinsic.String.Build("Select SUM(PERCENT) as PERCENT, SUM(PROFIT) as PROFIT, SUM(SALES) as SALES, SUM(COST) as COST, SUM(QTY_SHIPPED) as QTY_SHIPPED from Y_SA_IN_DETAIL where RUNID = '{0}' and SHIP_STATE = '{1}'",V.Global.iBIRunID,V.odbc.conx!rst.FieldValTrim!SHIP_STATE,V.Local.ssql2)
+			F.ODBC.Connection!conX.OpenLocalRecordsetRO("rstsubs",V.Local.sSQL2)
+			F.Intrinsic.Control.If(V.ODBC.conX!rstsubs.EOF,<>,True)
+				'put the subtotal for that state at the end of the string
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","","","Subtotals for: ",V.ODBC.conx!rst.FieldValTrim!SHIP_STATE,V.ODBC.conx!rstsubs.FieldValFloat!QTY_SHIPPED,V.ODBC.conx!rstsubs.FieldValfloat!SALES,V.ODBC.conx!rstsubs.FieldValfloat!COST,V.ODBC.conx!rstsubs.FieldValfloat!PROFIT,V.ODBC.conx!rstsubs.FieldValfloat!PERCENT,V.Local.ssubtotals)
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sline,V.Ambient.NewLine,V.local.ssubtotals,V.Local.sline)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstsubs.Close
+		F.ODBC.conx!rst.MoveNext
+		Function.Intrinsic.Control.Loop
+		F.ODBC.conx!rst.Close
+		'list the grand totals at the end
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8}","","","Grandtotals: ","",V.local.fgrandshipqty,V.Local.fgrandsales,V.Local.fgrandcost,V.Local.fgrandprofit,V.local.fgrandpercent,V.Local.sgrandtotals)
+		F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sline,V.Ambient.NewLine,V.local.sgrandtotals,V.Local.sline)
+		'put 2 lines between each range
+		F.Intrinsic.String.Build("{0}{1}{1}",V.Local.sline,V.Ambient.NewLine,V.Local.sline)
+			
+			V.Local.fgrandcost.Set(0)
+			V.Local.fgrandpercent.Set(0)
+			V.Local.fgrandprofit.Set(0)
+			V.Local.fgrandshipqty.Set(0)
+			V.Local.fgrandsales.Set(0)
+
+	F.Intrinsic.Control.Next(V.Local.iranges)
+F.Intrinsic.Control.EndIf
+
+'check to make sure the file exists
+F.Intrinsic.File.Exists(V.Local.sfullpath,V.Local.bexists)
+
+'if found delete and re-write it
+F.Intrinsic.Control.if(V.local.bexists,=,False)
+	F.Intrinsic.File.String2File(V.Local.sfullpath,V.Local.sline)
+F.Intrinsic.Control.Else
+	F.Intrinsic.File.DeleteFile(V.Local.sfullpath)
+	F.Intrinsic.File.String2File(V.Local.sfullpath,V.Local.sline)
+F.Intrinsic.Control.EndIf
+
+
+'close the wait dialog
+F.Intrinsic.UI.CloseWaitDialog
+
+'inform the user export is finished
+F.Intrinsic.UI.Msgbox("Export Complete")
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ExportData_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4149_SA_SHIPTO_PART.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.ExportData.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::Sales Analysis by Sales Rep / Ship To / Part
+SS_Form1.CTRL{{NAME::dtp1_Begdate\\TYPE::6\\CAPTION::Beginning Invoice Date\\TABSTOP::1\\GROUP::2\\BROWSER::0\\INTL::779801\\SIZE::1
+SS_Form1.CTRL{{NAME::dtp1_Enddate\\TYPE::6\\CAPTION::Ending Invoice Date\\TABSTOP::2\\GROUP::2\\BROWSER::0\\INTL::779901\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_Alldates\\TYPE::9\\CAPTION::All Dates\\TABSTOP::3\\GROUP::-1\\SUBGROUP::1\\BROWSER::0\\INTL::19700\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_BegRep\\TYPE::2\\CAPTION::Beginning Sales Rep Number\\RANGE::lvw1_Rep\\TABSTOP::4\\GROUP::1\\BROWSER::1\\INTL::63502\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_EndRep\\TYPE::2\\CAPTION::Ending Sales Rep Number\\RANGE::lvw1_Rep\\TABSTOP::5\\GROUP::1\\BROWSER::1\\INTL::216001\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_AllRep\\TYPE::9\\CAPTION::All Sales Reps\\TABSTOP::6\\GROUP::-1\\SUBGROUP::1\\BROWSER::0\\INTL::22701\\SIZE::1
+SS_Form1.CTRL{{NAME::lvw1_Rep\\TYPE::7\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_InclProg\\TYPE::9\\CAPTION::Include Progress Bill Lines\\TABSTOP::7\\GROUP::-1\\BROWSER::0\\INTL::291501\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_InclFreight\\TYPE::9\\CAPTION::Include Freight Charges\\TABSTOP::8\\GROUP::-1\\BROWSER::0\\INTL::291402\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1_InclExclusions\\TYPE::9\\CAPTION::Use Exclusion Accounts to Exclude Records\\TABSTOP::9\\GROUP::-1\\BROWSER::0\\INTL::3305\\SIZE::1
+SS_Form1.CTRL{{NAME::cmd1_Print\\TYPE::5\\CAPTION::Print\\TABSTOP::10\\GROUP::-1\\BROWSER::0\\INTL::452800\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
